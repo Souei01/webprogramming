@@ -81,6 +81,19 @@ class Account{
 
         return $data;
     }
+
+    // Add this method to fetch all accounts
+    function getAllAccounts() {
+        $sql = "SELECT * FROM account ORDER BY first_name ASC;";
+        $query = $this->db->connect()->prepare($sql);
+
+        $data = null;
+        if ($query->execute()) {
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $data;
+    }
 }
 
 // $obj = new Account();
