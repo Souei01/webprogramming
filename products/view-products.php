@@ -42,6 +42,9 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH
 
 ?>
 <div class="container-fluid">
+    <!-- Keep only one modal container -->
+    <div class="modal-container"></div>
+    
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
@@ -49,7 +52,6 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH
             </div>
         </div>
     </div>
-    <div class="modal-container"></div>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -57,7 +59,6 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <?php
                             require_once '../classes/product.class.php';
-                            session_start();
                             $productObj = new Product();
                         ?>
                         <div class="d-flex justify-content-center align-items-center">
